@@ -497,23 +497,23 @@ defaultProxyGroups: [
     name: "📺 Emby",
     icon: ICON_VAL(ICONS.Emby),
     proxies: [
-      "Emby 01 x 0.2",
-      "Emby 02 x 0.2",
-      "Emby 03 x 0.2",
-      "Emby 04 x 0.2",
+    "🎬 Emby 01 x 0.2",
+    "🎬 Emby 02 x 0.2",
+    "🎬 Emby 03 x 0.2",
+    "🎬 Emby 04 x 0.2",
 
-      "香港 | Hong Kong 01",
-      "香港 | Hong Kong 02",
-      "香港 | Hong Kong 03",
-      "香港 | Hong Kong 04",
-      "香港 | Hong Kong 05",
-      "香港 | Hong Kong 06",
-      "香港 | Hong Kong 07",
-      "香港 | Hong Kong 08",
-      "香港 | Hong Kong 09",
+    "🇭🇰 香港｜Hong Kong 01",
+    "🇭🇰 香港｜Hong Kong 02",
+    "🇭🇰 香港｜Hong Kong 03",
+    "🇭🇰 香港｜Hong Kong 04",
+    "🇭🇰 香港｜Hong Kong 05",
+    "🇭🇰 香港｜Hong Kong 06",
+    "🇭🇰 香港｜Hong Kong 07",
+    "🇭🇰 香港｜Hong Kong 08",
+    "🇭🇰 香港｜Hong Kong 09",
 
-      "默认节点",
-      "直连"
+    "默认节点",
+    "直连"
     ]
   }
 ],
