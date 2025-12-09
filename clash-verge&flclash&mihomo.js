@@ -403,8 +403,7 @@ preRules: [
   // --- 直连 ---
   "DOMAIN,mygcns.mobaiemby.site,DIRECT",
   "DOMAIN,mcdn.mobaiemby.site,DIRECT",
-  "RULE-SET,adobe_domain_proxy,DIRECT",
-  "DOMAIN,alphatvx.alphatvapp.top,DIRECT",
+    "DOMAIN,alphatvx.alphatvapp.top,DIRECT",
   "DOMAIN,aaa.204cloud.com,DIRECT",
   "IP-CIDR,43.139.184.65/32,DIRECT",
   "IP-CIDR,202.189.5.63/32,DIRECT",
