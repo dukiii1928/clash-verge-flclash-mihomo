@@ -380,42 +380,42 @@ const Config = {
     line: true, whatsapp: true, games: true, japan: true, tracker: true, ads: true
   },
   
-  preRules: [
-    "RULE-SET,applications,下载软件",
-    "PROCESS-NAME,SunloginClient,DIRECT",
-    "PROCESS-NAME,SunloginClient.exe,DIRECT",
-    "PROCESS-NAME,AnyDesk,DIRECT",
-    "PROCESS-NAME,AnyDesk.exe,DIRECT",
+preRules: [
+  "RULE-SET,applications,下载软件",
+  "PROCESS-NAME,SunloginClient,DIRECT",
+  "PROCESS-NAME,SunloginClient.exe,DIRECT",
+  "PROCESS-NAME,AnyDesk,DIRECT",
+  "PROCESS-NAME,AnyDesk.exe,DIRECT",
 
-    // --- Emby 专用 ---
-    "DOMAIN-SUFFIX,beupisp.com,📺 Emby",
-    "DOMAIN,m.mobaiemby.site,📺 Emby",
-    "DOMAIN,ptest.cn2gias.uk,📺 Emby",
-    "DOMAIN,pe.cn2gias.uk,📺 Emby",
-    "DOMAIN,asia.cn2gias.uk,📺 Emby",
-    "DOMAIN,4.fireirf.ufvvlvbs.223789.xyz,📺 Emby",
-    "DOMAIN-SUFFIX,023168.xyz,📺 Emby",
-    "DOMAIN-SUFFIX,a1.zdz.plus,📺 Emby",
-    "DOMAIN-SUFFIX,a2.zdz.plus,📺 Emby",
-    "DOMAIN,www.lilyemby.my,📺 Emby",
-    "IP-CIDR,107.181.238.190/32,📺 Emby",
+  // --- Emby 专用 ---
+  "DOMAIN-SUFFIX,beupisp.com,📺 Emby",
+  "DOMAIN,m.mobaiemby.site,📺 Emby",
+  "DOMAIN,ptest.cn2gias.uk,📺 Emby",
+  "DOMAIN,pe.cn2gias.uk,📺 Emby",
+  "DOMAIN,asia.cn2gias.uk,📺 Emby",
+  "DOMAIN,4.fireirf.ufvvlvbs.223789.xyz,📺 Emby",
+  "DOMAIN-SUFFIX,023168.xyz,📺 Emby",
+  "DOMAIN-SUFFIX,a1.zdz.plus,📺 Emby",
+  "DOMAIN-SUFFIX,a2.zdz.plus,📺 Emby",
+  "DOMAIN,www.lilyemby.my,📺 Emby",
+  "IP-CIDR,107.181.238.190/32,📺 Emby",
 
-    // --- 直连 ---
-    "DOMAIN,mygcns.mobaiemby.site,DIRECT",
-    "DOMAIN,mcdn.mobaiemby.site,DIRECT",
-    "RULE-SET,adobe_domain_proxy,DIRECT",
-    "DOMAIN,alphatvx.alphatvapp.top,DIRECT",
-    "DOMAIN,aaa.204cloud.com,DIRECT",
-    "IP-CIDR,43.139.184.65/32,DIRECT",
-    "IP-CIDR,202.189.5.63/32,DIRECT",
-    "DOMAIN,pre-direct.as9929.uk,DIRECT",
-    "DOMAIN-SUFFIX,204cloud.com,DIRECT",
-    "DOMAIN,cdn.lilyemby.my,DIRECT",
-    "IP-CIDR,107.174.176.176/32,DIRECT",
-    "DOMAIN-SUFFIX,ifonts.com,DIRECT",
-    "DOMAIN,steamcdn-a.akamaihd.net,DIRECT",
-    "DOMAIN-SUFFIX,steamserver.net,DIRECT"
-  ],
+  // --- 直连 ---
+  "DOMAIN,mygcns.mobaiemby.site,DIRECT",
+  "DOMAIN,mcdn.mobaiemby.site,DIRECT",
+  "RULE-SET,adobe_domain_proxy,DIRECT",
+  "DOMAIN,alphatvx.alphatvapp.top,DIRECT",
+  "DOMAIN,aaa.204cloud.com,DIRECT",
+  "IP-CIDR,43.139.184.65/32,DIRECT",
+  "IP-CIDR,202.189.5.63/32,DIRECT",
+  "DOMAIN,pre-direct.as9929.uk,DIRECT",
+  "DOMAIN-SUFFIX,204cloud.com,DIRECT",
+  "DOMAIN,cdn.lilyemby.my,DIRECT",
+  "IP-CIDR,107.174.176.176/32,DIRECT",
+  "DOMAIN-SUFFIX,ifonts.com,DIRECT",
+  "DOMAIN,steamcdn-a.akamaihd.net,DIRECT",
+  "DOMAIN-SUFFIX,steamserver.net,DIRECT"
+],
 
   regionOptions: {
     excludeHighPercentage: true, ratioLimit: 2,
@@ -467,99 +467,19 @@ const Config = {
     { id: "github", rule: ["GEOSITE,github,Github"], name: "Github", url: "https://github.com/robots.txt", icon: ICON_VAL(ICONS.GitHub) },
     { id: "japan", rule: ["RULE-SET,category-bank-jp,日本网站", "GEOIP,jp,日本网站,no-resolve"], name: "日本网站", url: "https://r.r10s.jp/com/img/home/logo/touch.png", icon: ICON_VAL(ICONS.JP), ruleProvider: {name: "category-bank-jp", url: URLS.rulesets.category_bank_jp_mrs(), format: "mrs", behavior: "domain"} }
   ],
-  
   system: {
-    // —— 1. 基础运行参数 (Base Config) ——
-    port: 7890,
-    "socks-port": 7891,
-    "redir-port": 7892,
-    "mixed-port": 7893,
-    "tproxy-port": 7894,
-
-    "allow-lan": true,
-    "bind-address": "*",
-    mode: "rule",
-    ipv6: false,
-    "unified-delay": true,
-    "tcp-concurrent": true,
-    "log-level": "warning",
-    "find-process-mode": "strict",
-    "global-client-fingerprint": "chrome",
-    "keep-alive-idle": 600,
-    "keep-alive-interval": 15,
-
+    "allow-lan": true, "bind-address": "*", mode: "rule",
     profile: { "store-selected": true, "store-fake-ip": true },
-
-    // —— 2. 实验性功能 (Experimental) ——
-    experimental: {
-      "http-headers": {
-        request: [
-          {
-            name: "User-Agent",
-            value: "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36"
-          }
-        ]
-      }
-    },
-
-    // —— 3. Geo 数据管理 (GeoData) ——
-    "geodata-mode": true,
-    "geodata-loader": "memconservative",
-    "geo-auto-update": true,
-    "geo-update-interval": 24,
-
-    // —— 5. 流量嗅探模块 (Sniffer) ——
+    "unified-delay": true, "tcp-concurrent": true, "keep-alive-interval": 1800,
+    "find-process-mode": "strict", "geodata-mode": true, "geodata-loader": "memconservative",
+    "geo-auto-update": true, "geo-update-interval": 24,
     sniffer: {
-      enable: true,
-      "force-dns-mapping": true,
-      "parse-pure-ip": true,
-      "override-destination": true,
-      sniff: {
-        HTTP: { ports: [80, "8080-8880"] },
-        TLS: { ports: [443, 8443] },
-        QUIC: { ports: [443, 8443] }
-      },
-      "force-domain": ["+.v2ex.com"],
-      "skip-domain": ["+.baidu.com", "Mijia Cloud", "+.push.apple.com", "+.apple.com"]
+      enable: true, "force-dns-mapping": true, "parse-pure-ip": false, "override-destination": true,
+      sniff: { TLS: { ports: [443, 8443] }, HTTP: { ports: [80, "8080-8880"] }, QUIC: { ports: [443, 8443] } },
+      "skip-src-address": ["127.0.0.0/8", "192.168.0.0/16", "10.0.0.0/8", "172.16.0.0/12"],
+      "force-domain": ["+.google.com", "+.googleapis.com", "+.googleusercontent.com", "+.youtube.com", "+.facebook.com", "+.messenger.com", "+.fbcdn.net", "fbcdn-a.akamaihd.net"],
+      "skip-domain": ["Mijia Cloud", "+.oray.com"]
     },
-
-    // —— NTP & GeoX（沿用脚本原来的） ——
-    ntp: { enable: true, "write-to-system": false, server: "cn.ntp.org.cn" },
-    "geox-url": {
-      geoip: URLS.geox.geoip(),
-      geosite: URLS.geox.geosite(),
-      mmdb: URLS.geox.mmdb(),
-      asn: URLS.geox.asn()
-    },
-
-    // —— 4. 外部控制面板 (Controller) ——
-    "external-controller": "0.0.0.0:9090",
-    secret: "",
-    "external-ui": "ui",
-    "external-ui-url": "https://github.com/Zephyruso/zashboard/releases/latest/download/dist-no-fonts.zip",
-
-    // —— 6. 虚拟网卡设置 (TUN Mode) ——
-    tun: {
-      enable: true,
-      stack: "mixed",
-      device: "mihomo-core",
-      "dns-hijack": ["any:53", "tcp://any:53"],
-      "auto-route": true,
-      "auto-redirect": false,
-      "auto-detect-interface": true,
-      "strict-route": true,
-      "udp-timeout": 300
-    },
-
-    // —— 8. Hosts 映射 ——
-    hosts: {
-      "5.28.195.1": "91.108.56.188",
-      "5.28.195.2": "91.108.56.188",
-      "5.28.195.3": "91.108.56.188",
-      "5.28.195.4": "91.108.56.188",
-      "5.28.195.5": "91.108.56.188"
-    }
-  },
     ntp: { enable: true, "write-to-system": false, server: "cn.ntp.org.cn" },
     "geox-url": { geoip: URLS.geox.geoip(), geosite: URLS.geox.geosite(), mmdb: URLS.geox.mmdb(), asn: URLS.geox.asn() }
   },
@@ -567,36 +487,36 @@ const Config = {
     ruleProvider: { type: "http", format: "yaml", interval: 86400 },
     proxyGroup: { interval: 300, timeout: 3000, url: "http://cp.cloudflare.com/generate_204", lazy: true, "max-failed-times": 3, hidden: false },
     
-    defaultProxyGroups: [
-      { name: "下载软件", icon: ICON_VAL(ICONS.Download), proxies: ["直连", "REJECT", "默认节点", "国内网站"] },
-      { name: "其他外网", icon: ICON_VAL(ICONS.StreamingNotCN), proxies: ["默认节点", "国内网站"] },
-      { name: "国内网站", url: "http://wifi.vivo.com.cn/generate_204", icon: ICON_VAL(ICONS.StreamingCN), proxies: ["直连", "默认节点"] },
+defaultProxyGroups: [
+  { name: "下载软件", icon: ICON_VAL(ICONS.Download), proxies: ["直连", "REJECT", "默认节点", "国内网站"] },
+  { name: "其他外网", icon: ICON_VAL(ICONS.StreamingNotCN), proxies: ["默认节点", "国内网站"] },
+  { name: "国内网站", url: "http://wifi.vivo.com.cn/generate_204", icon: ICON_VAL(ICONS.StreamingCN), proxies: ["直连", "默认节点"] },
 
-      // 📺 Emby 专用分组
-      {
-        name: "📺 Emby",
-        icon: ICON_VAL(ICONS.Emby),
-        proxies: [
-          "Emby 01 x 0.2",
-          "Emby 02 x 0.2",
-          "Emby 03 x 0.2",
-          "Emby 04 x 0.2",
+  // 📺 Emby 专用分组
+  {
+    name: "📺 Emby",
+    icon: ICON_VAL(ICONS.Emby),
+    proxies: [
+      "Emby 01 x 0.2",
+      "Emby 02 x 0.2",
+      "Emby 03 x 0.2",
+      "Emby 04 x 0.2",
 
-          "香港 | Hong Kong 01",
-          "香港 | Hong Kong 02",
-          "香港 | Hong Kong 03",
-          "香港 | Hong Kong 04",
-          "香港 | Hong Kong 05",
-          "香港 | Hong Kong 06",
-          "香港 | Hong Kong 07",
-          "香港 | Hong Kong 08",
-          "香港 | Hong Kong 09",
+      "香港 | Hong Kong 01",
+      "香港 | Hong Kong 02",
+      "香港 | Hong Kong 03",
+      "香港 | Hong Kong 04",
+      "香港 | Hong Kong 05",
+      "香港 | Hong Kong 06",
+      "香港 | Hong Kong 07",
+      "香港 | Hong Kong 08",
+      "香港 | Hong Kong 09",
 
-          "默认节点",
-          "直连"
-        ]
-      }
-    ],
+      "默认节点",
+      "直连"
+    ]
+  }
+],
 
     postRules: ["GEOSITE,private,DIRECT", "GEOIP,private,DIRECT,no-resolve", "GEOSITE,cn,国内网站", "GEOIP,cn,国内网站,no-resolve", "MATCH,其他外网"]
   }
